@@ -1,0 +1,217 @@
+(function() {
+  if (this.exampleApp == null) {
+    this.exampleApp = {};
+  }
+
+  this.exampleApp.setting = {
+    width: 300,
+    height: 400
+  };
+
+}).call(this);
+
+(function() {
+  if (this.exampleApp == null) {
+    this.exampleApp = {};
+  }
+
+  this.exampleApp.sceneManager = {
+    stage: void 0,
+    scenes: [],
+    lastScene: function() {
+      return this.scenes[this.scenes.length - 1];
+    },
+    resetWithScene: function(scene) {
+      this.scenes.length = 0;
+      this.scenes.push(scene);
+      return this.stage.addChild(scene);
+    },
+    popScene: function() {
+      this.stage.removeChild(this.lastScene());
+      this.scenes.pop();
+      return this.lastScene().mouseEnabled = true;
+    },
+    pushScene: function(scene) {
+      this.lastScene().mouseEnabled = false;
+      this.scenes.push(scene);
+      return this.stage.addChild(scene);
+    }
+  };
+
+}).call(this);
+
+(function() {
+  var Scene, SceneA, SceneB, SceneInfo, cjs, sceneManager, setting,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  if (this.exampleApp == null) {
+    this.exampleApp = {};
+  }
+
+  cjs = createjs;
+
+  setting = this.exampleApp.setting;
+
+  sceneManager = this.exampleApp.sceneManager;
+
+  Scene = (function(_super) {
+    __extends(Scene, _super);
+
+    function Scene(bgColor) {
+      var shape;
+      if (bgColor == null) {
+        bgColor = 'blue';
+      }
+      this.initialize();
+      if (bgColor !== void 0) {
+        shape = new cjs.Shape();
+        shape.graphics.beginFill(bgColor).drawRect(0, 0, setting.width, setting.height);
+        this.addChild(shape);
+      }
+    }
+
+    return Scene;
+
+  })(cjs.Container);
+
+  SceneA = (function(_super) {
+    __extends(SceneA, _super);
+
+    function SceneA() {
+      var header, info, photoA, photoB, photoC;
+      SceneA.__super__.constructor.call(this, '#EDE4D1');
+      header = new cjs.Bitmap('images/header.png');
+      header.scaleX = header.scaleY = 0.5;
+      this.addChild(header);
+      info = new cjs.Bitmap('images/info.png');
+      info.y = 356;
+      info.scaleX = info.scaleY = 0.5;
+      this.addChild(info);
+      info.on('click', function() {
+        var scene;
+        scene = new SceneInfo();
+        return sceneManager.pushScene(scene);
+      });
+      photoA = new cjs.Bitmap('images/a.png');
+      this.addChild(photoA);
+      photoA.y = 38;
+      photoA.scaleX = photoA.scaleY = 0.5;
+      photoA.on('click', function() {
+        var scene;
+        scene = new SceneB('a');
+        return sceneManager.pushScene(scene);
+      });
+      photoB = new cjs.Bitmap('images/b.png');
+      this.addChild(photoB);
+      photoB.y = 146;
+      photoB.scaleX = photoB.scaleY = 0.5;
+      photoB.on('click', function() {
+        var scene;
+        scene = new SceneB('b');
+        return sceneManager.pushScene(scene);
+      });
+      photoC = new cjs.Bitmap('images/c.png');
+      this.addChild(photoC);
+      photoC.y = 253;
+      photoC.scaleX = photoC.scaleY = 0.5;
+      photoC.on('click', function() {
+        var scene;
+        scene = new SceneB('c');
+        return sceneManager.pushScene(scene);
+      });
+    }
+
+    return SceneA;
+
+  })(Scene);
+
+  SceneB = (function(_super) {
+    __extends(SceneB, _super);
+
+    function SceneB(contentId) {
+      var content, header;
+      if (contentId == null) {
+        contentId = 'a';
+      }
+      SceneB.__super__.constructor.call(this, 'white');
+      content = new cjs.Bitmap("images/page-view-content-" + contentId + ".png");
+      content.scaleX = content.scaleY = 0.5;
+      this.addChild(content);
+      header = new cjs.Bitmap('images/header-back.png');
+      header.scaleX = header.scaleY = 0.5;
+      this.addChild(header);
+      header.on('click', function() {
+        return sceneManager.popScene();
+      });
+    }
+
+    return SceneB;
+
+  })(Scene);
+
+  SceneInfo = (function(_super) {
+    __extends(SceneInfo, _super);
+
+    function SceneInfo() {
+      var content;
+      SceneInfo.__super__.constructor.call(this, 'white');
+      content = new cjs.Bitmap("images/info-content.png");
+      content.scaleX = content.scaleY = 0.5;
+      this.addChild(content);
+      this.on('click', function() {
+        return sceneManager.popScene();
+      });
+    }
+
+    return SceneInfo;
+
+  })(Scene);
+
+  this.exampleApp.SceneA = SceneA;
+
+  this.exampleApp.SceneB = SceneB;
+
+  this.exampleApp.SceneInfo = SceneInfo;
+
+}).call(this);
+
+(function() {
+  var App, SceneA, SceneB, SceneInfo, cjs, sceneManager, setting;
+
+  if (this.exampleApp == null) {
+    this.exampleApp = {};
+  }
+
+  cjs = createjs;
+
+  setting = this.exampleApp.setting;
+
+  sceneManager = this.exampleApp.sceneManager;
+
+  SceneA = this.exampleApp.SceneA;
+
+  SceneB = this.exampleApp.SceneB;
+
+  SceneInfo = this.exampleApp.SceneInfo;
+
+  App = (function() {
+    function App() {
+      var scene;
+      console.log("Welcome to my portfolio.");
+      this.canvas = document.getElementById("app-canvas");
+      this.stage = new cjs.Stage(this.canvas);
+      cjs.Ticker.setFPS(60);
+      cjs.Ticker.addEventListener("tick", this.stage);
+      sceneManager.stage = this.stage;
+      scene = new SceneA();
+      sceneManager.resetWithScene(scene);
+    }
+
+    return App;
+
+  })();
+
+  new App();
+
+}).call(this);

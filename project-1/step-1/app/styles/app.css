@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* canvases sit inside the #app frame. It’s similar to layers. */
+#app > canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 300px;
+  margin-top: -200px;
+  margin-left: -150px;
+}
+
