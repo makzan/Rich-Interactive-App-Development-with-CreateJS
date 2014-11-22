@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Jack Portfolio</title>
+    <link rel="stylesheet" href="styles/app.css">
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="app-canvas" width="300" height="400"></canvas>
+      <div id="main" class="page">
+        <div class='header'>
+          <img src="images/header.png" alt="Header">
+        </div>
+        <ul id="main-list" class='non-collapse-content'>
+          <li><a href="#detail-page"><img src='images/a.png' alt='Photo A'></a></li>
+          <li><a href="#detail-page"><img src='images/b.png' alt='Photo B'></a></li>
+          <li><a href="#detail-page"><img src='images/c.png' alt='Photo C'></a></li>
+          <li><a href="#detail-page"><img src='images/a.png' alt='Photo A'></a></li>
+          <li><a href="#detail-page"><img src='images/b.png' alt='Photo B'></a></li>
+          <li><a href="#detail-page"><img src='images/c.png' alt='Photo C'></a></li>
+          <li><a href="#detail-page"><img src='images/a.png' alt='Photo A'></a></li>
+          <li><a href="#detail-page"><img src='images/b.png' alt='Photo B'></a></li>
+          <li><a href="#detail-page"><img src='images/c.png' alt='Photo C'></a></li>
+        </ul>
+        <div id="info-link">
+          <a href="#info-page" data-transition="TransitionAnimationA"><img src='images/info.png' alt='Link to Info'></a>
+        </div>
+
+      </div>
+
+      <div id="detail-page" class="page">
+        <a href="#" class='header'><img src='images/header-back.png' alt='Back to main'></a>
+        <img src='images/photo-a.png' alt='Detail of Photo A'>
+        <p>Here is a photo from Unsplash. The photo is free for commercial use. I put it here just for the app example. The photo was taken by Ben Moore.</p>
+        <div id="info-link">
+          <a href="#info-page" data-transition="TransitionAnimationA"><img src='images/info.png' alt='Link to Info'></a>
+        </div>
+      </div>
+
+      <div id="info-page" class="page">
+        <a href="#" class='header'><img src='images/header-back.png' alt='Back to main'></a>
+        <div class='non-collapse-content'>
+          <p>This is an example app that serves as the 1st chapter of my book – Rich Interactive App Development with CreateJS. This example demonstrates a custom animated transition. It lacks some essential features but this is just for the chapter 1. More features coming in future chapter.</p>
+          <p>This example is bought to you by Makzan. He has written three books and one video course on building a Flash virtual world and creating games with HTML5 and the latest web standards. He is currently teaching courses in Hong Kong and Macao SAR.</p>
+        </div>
+      </div>
+  	</div>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="scripts/old-browser.js"></script>
+  	<script src="http://code.createjs.com/easeljs-0.7.1.min.js"></script>
+  	<script src="http://code.createjs.com/tweenjs-0.5.1.min.js"></script>
+  	<script src="http://code.createjs.com/movieclip-0.7.1.min.js"></script>
+    <script src="scripts/transitions.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

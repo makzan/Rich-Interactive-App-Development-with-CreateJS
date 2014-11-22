@@ -6,3 +6,4 @@ this.exampleApp.setting = {
   width: 300
   height: 400
 }
+
