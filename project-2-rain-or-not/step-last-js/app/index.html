@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Rain or Not</title>
+    <link rel="stylesheet" href="styles/app.css">
+  </head>
+  <body>
+    <div id="app">      
+      <div id="main" class="page">
+        <canvas id='app-canvas' width='300' height='300'>
+          <img id='rainy' class='status' src='http://placehold.it/300x300&text=rainy' alt='rainy'>
+          <img id='sunny' class='status' src='http://placehold.it/300x300&text=sunny' alt='sunny'>
+        </canvas>        
+      </div>
+  	</div>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+  	<script src="http://code.createjs.com/easeljs-0.7.1.min.js"></script>
+  	<script src="http://code.createjs.com/tweenjs-0.5.1.min.js"></script>
+  	<script src="http://code.createjs.com/movieclip-0.7.1.min.js"></script>
+    <script src="scripts/rain-or-not-lib.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

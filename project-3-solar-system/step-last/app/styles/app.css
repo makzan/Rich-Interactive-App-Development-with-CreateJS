@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box; }
+
+body, div, ul, li, h1, h2, h3, p {
+  margin: 0;
+  padding: 0; }
+
+img {
+  max-width: 100%; }
+
+html, body, #app, #solar-system {
+  width: 100%;
+  height: 100%; }
+
+#app {
+  position: relative;
+  overflow: hidden; }
+
+#solar-system {
+  position: absolute;
+  overflow: hidden;
+  transform-origin: 0 0; }
+
+.layer {
+  position: absolute;
+  transition: all 1.5s ease-out; }
+
+.deep-bg {
+  width: 100%;
+  height: 13000px;
+  background: black url(../images/deep-bg.jpg); }
+
+.bg {
+  width: 100%;
+  height: 13000px;
+  background: url(../images/bg.jpg);
+  opacity: 0.3; }
+
+.planet {
+  position: absolute; }
+  .planet img {
+    max-width: 80px; }
+
+.mercury {
+  transform: translateX(30vw) translateY(calc(13000px - 114px)); }
+
+#solar-system.focus-mercury .planets.layer {
+  transform: translateY(calc(-13000px + 114px + 40vh)); }
+#solar-system.focus-mercury .bg.layer {
+  transform: translateY(calc((-13000px + 114px + 40vh) / 10)); }
+#solar-system.focus-mercury .deep-bg.layer {
+  transform: translateY(calc((-13000px + 114px + 40vh) / 30)); }
+
+.venus {
+  transform: translateX(15vw) translateY(calc(13000px - 216px)); }
+
+#solar-system.focus-venus .planets.layer {
+  transform: translateY(calc(-13000px + 216px + 40vh)); }
+#solar-system.focus-venus .bg.layer {
+  transform: translateY(calc((-13000px + 216px + 40vh) / 10)); }
+#solar-system.focus-venus .deep-bg.layer {
+  transform: translateY(calc((-13000px + 216px + 40vh) / 30)); }
+
+.earth {
+  transform: translateX(45vw) translateY(calc(13000px - 300px)); }
+
+#solar-system.focus-earth .planets.layer {
+  transform: translateY(calc(-13000px + 300px + 40vh)); }
+#solar-system.focus-earth .bg.layer {
+  transform: translateY(calc((-13000px + 300px + 40vh) / 10)); }
+#solar-system.focus-earth .deep-bg.layer {
+  transform: translateY(calc((-13000px + 300px + 40vh) / 30)); }
+
+.mars {
+  transform: translateX(50vw) translateY(calc(13000px - 456px)); }
+
+#solar-system.focus-mars .planets.layer {
+  transform: translateY(calc(-13000px + 456px + 40vh)); }
+#solar-system.focus-mars .bg.layer {
+  transform: translateY(calc((-13000px + 456px + 40vh) / 10)); }
+#solar-system.focus-mars .deep-bg.layer {
+  transform: translateY(calc((-13000px + 456px + 40vh) / 30)); }
+
+.jupiter {
+  transform: translateX(35vw) translateY(calc(13000px - 1558px)); }
+
+#solar-system.focus-jupiter .planets.layer {
+  transform: translateY(calc(-13000px + 1558px + 40vh)); }
+#solar-system.focus-jupiter .bg.layer {
+  transform: translateY(calc((-13000px + 1558px + 40vh) / 10)); }
+#solar-system.focus-jupiter .deep-bg.layer {
+  transform: translateY(calc((-13000px + 1558px + 40vh) / 30)); }
+
+.saturn {
+  transform: translateX(60vw) translateY(calc(13000px - 2860px)); }
+
+#solar-system.focus-saturn .planets.layer {
+  transform: translateY(calc(-13000px + 2860px + 40vh)); }
+#solar-system.focus-saturn .bg.layer {
+  transform: translateY(calc((-13000px + 2860px + 40vh) / 10)); }
+#solar-system.focus-saturn .deep-bg.layer {
+  transform: translateY(calc((-13000px + 2860px + 40vh) / 30)); }
+
+.uranus {
+  transform: translateX(25vw) translateY(calc(13000px - 5760px)); }
+
+#solar-system.focus-uranus .planets.layer {
+  transform: translateY(calc(-13000px + 5760px + 40vh)); }
+#solar-system.focus-uranus .bg.layer {
+  transform: translateY(calc((-13000px + 5760px + 40vh) / 10)); }
+#solar-system.focus-uranus .deep-bg.layer {
+  transform: translateY(calc((-13000px + 5760px + 40vh) / 30)); }
+
+.neptune {
+  transform: translateX(56vw) translateY(calc(13000px - 9000px)); }
+
+#solar-system.focus-neptune .planets.layer {
+  transform: translateY(calc(-13000px + 9000px + 40vh)); }
+#solar-system.focus-neptune .bg.layer {
+  transform: translateY(calc((-13000px + 9000px + 40vh) / 10)); }
+#solar-system.focus-neptune .deep-bg.layer {
+  transform: translateY(calc((-13000px + 9000px + 40vh) / 30)); }
+
+/* User Inteface */
+.buttons {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse; }
+  .buttons a {
+    display: block;
+    flex: 1;
+    text-decoration: none;
+    color: #555;
+    line-height: 50px; }
+    .buttons a.active {
+      color: white; }
+
+/* Info Panel */
+.info-panel {
+  position: absolute;
+  top: 0;
+  color: #555; }
+
+/* Detail Panel */
+.detail-panel {
+  position: absolute;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  padding: 0.5rem;
+  transition: all 0.3s ease-out; }
+  .detail-panel img {
+    max-height: 70%; }
+  .detail-panel.out {
+    transform: translate3d(0, 100%, 0); }
+  .detail-panel .tab {
+    display: none; }

@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body, div, ul, li, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+html, body, #app, #solar-system {
+  width: 100%;
+  height: 100%;
+}
+
+
+#app {
+  position: relative;  
+  overflow: hidden;
+}
+
+
+$space-height: 13000px;
+$bg-z: 10;
+$deep-bg-z: 30;
+
+#solar-system {    
+  position: absolute;
+  overflow: hidden;  
+  
+  transform-origin: 0 0;
+}
+
+
+.layer {
+  position: absolute;
+  transition: all 1.5s ease-out;
+}
+
+.deep-bg {
+  width: 100%;
+  height: $space-height;
+  background: black url(../images/deep-bg.jpg);
+}
+
+.bg {
+  width: 100%;
+  height: $space-height;
+  background: url(../images/bg.jpg);
+  opacity: .3;
+}
+
+.planet {
+  position: absolute;   
+  
+  img {
+    max-width: 80px;  
+  }
+}
+
+
+
+$planets: "mercury" "venus" "earth" "mars" "jupiter" "saturn" "uranus" "neptune";
+$distances:  57*2px 108*2px 150*2px 228*2px 779*2px 1430*2px 2880*2px 4500*2px;  
+$x-positions: 30vw 15vw 45vw 50vw 35vw 60vw 25vw 56vw;
+
+@for $i from 1 through length($planets) {
+  $name: nth($planets, $i);
+  $distance: nth($distances, $i);
+  $x-position: nth($x-positions, $i);
+  .#{$name} {
+    transform: translateX($x-position) translateY(calc(#{$space-height} - #{$distance}));  
+  }
+
+  #solar-system.focus-#{$name} {
+    .planets.layer {
+      transform: translateY(calc(-#{$space-height} + #{$distance} + 40vh));    
+    }
+    .bg.layer{
+      transform: translateY(calc((-#{$space-height} + #{$distance} + 40vh) / #{$bg-z}));
+    }
+    .deep-bg.layer{
+      transform: translateY(calc((-#{$space-height} + #{$distance} + 40vh) / #{$deep-bg-z}));
+    }
+  }
+}
+
+
+/* User Inteface */
+.buttons {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  
+  display: flex;
+  flex-direction: column-reverse;
+  
+  a {
+    display: block;
+    flex: 1;
+    
+    text-decoration: none;
+    color: #555;
+    
+    line-height: 50px;
+    
+    &.active {
+      color: white;
+    }
+  }
+}
+
+
+/* Info Panel */
+.info-panel {
+  position: absolute;
+  top: 0;
+  color: #555;
+}
+
+/* Detail Panel */
+.detail-panel {
+  position: absolute;
+  width: 100%;
+  background: rgba(255,255,255,.8);
+  bottom: 0;
+  padding: .5rem;
+  
+  transition: all .3s ease-out;
+  
+  img {
+    max-height: 70%;
+  }
+  
+  &.out {
+    transform: translate3d(0, 100%, 0);
+  }
+  
+  .tab {
+    display: none;
+  }
+}

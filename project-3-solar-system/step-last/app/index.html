@@ -1,0 +1,121 @@
+<!--
+This is a tutorial of presenting our solar system in mobile web view.
+
+Background photo from NASA. Credit: Jim Misti (Misti Mountain Observatory): http://imagine.gsfc.nasa.gov/news/12mar10.html
+-->
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <title>Solar System</title>
+    <link rel='stylesheet' href='styles/app.css'>
+  </head>
+  <body>
+    <div id='app'> 
+      <div id='solar-system' class='focus-earth'>
+        <div class='layer deep-bg'></div>
+        <div class='layer bg'></div>
+        <div class='layer planets'>
+          <div id='mercury' class='planet mercury'>
+            <a class='detail-button' href='#tab-mercury'><img src='images/mercury.jpg' alt='Mercury'></a>
+          </div>
+          <div id='venus' class='planet venus'>
+            <a class='detail-button' href='#tab-venus'><img src='images/venus.jpg' alt='Venus'></a>
+          </div>        
+          <div id='earth' class='planet earth'>
+            <a class='detail-button' href='#tab-earth'><img src='images/earth.jpg' alt='Earth'></a>
+          </div>        
+          <div id='mars' class='planet mars'>
+            <a class='detail-button' href='#tab-mars'><img src='images/mars.jpg' alt='Mars'></a>
+          </div>
+          <div id='jupiter' class='planet jupiter'>
+            <a class='detail-button' href='#tab-jupiter'><img src='images/jupiter.jpg' alt='Jupiter'></a>
+          </div>
+          <div id='saturn' class='planet saturn'>
+            <a class='detail-button' href='#tab-saturn'><img src='images/saturn.jpg' alt='Saturn'></a>
+          </div>
+          <div id='uranus' class='planet uranus'>
+            <a class='detail-button' href='#tab-uranus'><img src='images/uranus.jpg' alt='Uranus'></a>
+          </div>        
+          <div id='neptune' class='planet neptune'>
+            <a class='detail-button' href='#tab-neptune'><img src='images/neptune.jpg' alt='Neptune'></a>
+          </div>
+        </div>
+      </div>
+      <div class='info-panel'>
+        <p>Our solar system</p>
+        <p><small>Distance of planets is according to the real scale. <br>Size of the planet is not proportional in real scale.</small></p>
+      </div>
+      <div class='buttons'>
+        <a href='#mercury' class='focus-button'>Mercury</a>
+        <a href='#venus' class='focus-button'>Venus</a>
+        <a href='#earth' class='focus-button'>Earth</a>
+        <a href='#mars' class='focus-button'>Mars</a>
+        <a href='#jupiter' class='focus-button'>Jupiter</a>
+        <a href='#saturn' class='focus-button'>Saturn</a>
+        <a href='#uranus' class='focus-button'>Uranus</a>
+        <a href='#neptune' class='focus-button'>Neptune</a>
+      </div>
+      
+      <div class='detail-panel out'>
+        <div id='tab-mercury' class='tab'>          
+          <h1>Mercury</h1>
+          <img src='images/mercury.jpg' alt='Mercury'>
+          <p><small>Photo by NASA. Public Domain.</small></p>
+          <p><small>Tap anywhere to close</small></p>
+        </div>
+        <div id='tab-venus' class='tab'>          
+          <h1>Venus</h1>
+          <img src='images/venus.jpg' alt='Venus'>
+          <p><small>Photo by NASA. Public Domain.</small></p>
+          <p><small>Tap anywhere to close</small></p>
+        </div>
+        <div id='tab-earth' class='tab'>          
+          <h1>Earth</h1>
+          <img src='images/earth.jpg' alt='Earth'>
+          <p><small>Photo by NASA. Public Domain.</small></p>
+          <p><small>Tap anywhere to close</small></p>
+        </div>
+        <div id='tab-mars' class='tab'>          
+          <h1>Mars</h1>
+          <img src='images/mars.jpg' alt='Mars'>
+          <p><small>Photo by NASA. Public Domain.</small></p>
+          <p><small>Tap anywhere to close</small></p>
+        </div>
+        <div id='tab-jupiter' class='tab'>          
+          <h1>Jupiter</h1>
+          <img src='images/jupiter.jpg' alt='Jupiter'>
+          <p><small>Photo by NASA. Public Domain.</small></p>
+          <p><small>Tap anywhere to close</small></p>
+        </div>
+        <div id='tab-saturn' class='tab'>          
+          <h1>Saturn</h1>
+          <img src='images/saturn.jpg' alt='Saturn'>
+          <p><small>Photo by NASA. Public Domain.</small></p>
+          <p><small>Tap anywhere to close</small></p>
+        </div>
+        <div id='tab-uranus' class='tab'>          
+          <h1>Uranus</h1>
+          <img src='images/uranus.jpg' alt='Uranus'>
+          <p><small>Photo by NASA. Public Domain.</small></p>
+          <p><small>Tap anywhere to close</small></p>
+        </div>
+        <div id='tab-neptune' class='tab'>          
+          <h1>Neptune</h1>
+          <img src='images/neptune.jpg' alt='Neptune'>
+          <p><small>Photo by NASA. Public Domain.</small></p>
+          <p><small>Tap anywhere to close</small></p>
+        </div>
+      </div>
+  	</div>
+
+    <script src='//code.jquery.com/jquery.min.js'></script>
+  	<script src='//code.createjs.com/easeljs-0.7.1.min.js'></script>
+  	<script src='//code.createjs.com/tweenjs-0.5.1.min.js'></script>
+  	<script src='//code.createjs.com/movieclip-0.7.1.min.js'></script>
+    <script src='scripts/app.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+* {
+  touch-callout: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+body {
+  background: #ccc;  
+  font-family: Vedarna, sans-serif;
+  transition: background .4s ease-out;
+}
+
+.loading {
+  background-image: url(../images/loading.png) center center no-repeat;
+}
+
+.sunny {
+  background: #B8DCF1
+}
+.rainy {
+  background: #9FB6C4;
+}
+
+
+.page {
+  width: 300px;
+  margin: 0 auto;
+}
+header, .description {
+  text-align: center;
+  color: white;  
+}
+
+header {  
+  font-size: 1.5rem;
+}
+
+
+.out {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.in {
+  transition: all .75s cubic-bezier(0.140, 0.460, 0.160, 1.210);
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+
+/* Flexbox */
+html, body, #app, .page {
+  height: 100%;
+}
+.page {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

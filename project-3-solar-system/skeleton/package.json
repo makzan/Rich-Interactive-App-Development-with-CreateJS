@@ -1,0 +1,19 @@
+{
+  "name": "Skeleton",
+  "version": "1.0.0",
+  "description": "An example for my book Rich interactive app development with CreateJS",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Makzan",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "gulp": "^3.8.9",
+    "gulp-coffee": "^2.2.0",
+    "gulp-concat": "^2.4.1",
+    "gulp-order": "^1.1.1",
+    "gulp-sass": "^1.2.4"
+  }
+}
