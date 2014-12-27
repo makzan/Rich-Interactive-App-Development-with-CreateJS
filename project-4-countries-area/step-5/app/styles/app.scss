@@ -1,0 +1,103 @@
+/* Basic reset */
+html, body, p, ul, li, h1, h2, h3, div {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Global */
+
+html, body {  
+  width: 100%;
+  height: 100%;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  background: IVORY;
+}
+
+/* Canvas */
+canvas {
+  max-width: 100%;
+  min-height: 150px;
+}
+
+.charts {
+  min-height: 150px;
+}
+
+/* Minimal flex grid */
+.container {
+  display: flex;
+}
+.container.vertical {
+  flex-direction: column;
+}
+.container > * {
+  flex: 1 1 auto;
+  border: 1px solid green; /* debug */
+}
+.container .shrink {
+  flex: 0 1 auto;
+}
+
+/* Area Description */
+p.description {
+  min-height: 30px;
+}
+
+/* List */
+ul {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  list-style: none;
+  padding: 5px;
+}
+ul li {
+  margin-top: -1px; /* for overlapping border */
+}
+
+/* Styling Radio and Checkbox */
+input[type='radio'],
+input[type='checkbox']{
+  display: none;    
+}
+
+input[type='radio'] + .name,
+input[type='checkbox'] + .name{
+  display: block;
+  font-size: 1rem;  
+  padding: 1rem .5rem;
+  padding-left: 2rem;
+  border: 1px solid transparent;
+  border-left: 0;
+  border-right: 0;
+  transition: all .3s ease-out;  
+}
+
+input[type='radio']:checked + .name,
+input[type='checkbox']:checked + .name{
+  border-color:DARKORANGE ;    
+}
+
+/* Radio specific */
+input[type='radio'] + .name {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15649/radio.svg) 10px 50% no-repeat; 
+  background-size: 16px;
+}
+input[type='radio']:checked + .name {
+  background: SNOW url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15649/radio-checked.svg) 10px 50% no-repeat;
+  background-size: 16px;
+}
+
+/* Checkbox specific */
+input[type='checkbox']:checked+.name {
+  background: SNOW url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15649/checked.svg) 10px 50% no-repeat;
+  background-size: 16px;
+}

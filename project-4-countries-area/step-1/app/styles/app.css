@@ -1,0 +1,52 @@
+/* Basic reset */
+html, body, p, ul, li, h1, h2, h3, div {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+/* Global */
+html, body {
+  width: 100%;
+  height: 100%; }
+
+#app {
+  width: 100%;
+  height: 100%;
+  background: IVORY; }
+
+/* Canvas */
+canvas {
+  max-width: 100%;
+  min-height: 150px; }
+
+.charts {
+  min-height: 150px; }
+
+/* Minimal flex grid */
+.container {
+  display: flex; }
+
+.container.vertical {
+  flex-direction: column; }
+
+.container > * {
+  flex: 1 1 auto;
+  border: 1px solid green;
+  /* debug */ }
+
+.container .shrink {
+  flex: 0 1 auto; }
+
+/* Area Description */
+p.description {
+  min-height: 30px; }
+
+/* List */
+ul {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  list-style: none;
+  padding: 5px; }
