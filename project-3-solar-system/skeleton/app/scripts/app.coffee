@@ -2,7 +2,7 @@ this.app = {}
 
 class App
   constructor: ->
-    console.log "Welcoe"
+    console.log "Welcome"
 
 
 new App()
