@@ -21,8 +21,8 @@
       return;
     }
     ratio = window.devicePixelRatio;
-    height = canvas.getAttribute('height');
     width = canvas.getAttribute('width');
+    height = canvas.getAttribute('height');
     canvas.setAttribute('width', Math.round(width * ratio));
     canvas.setAttribute('height', Math.round(height * ratio));
     canvas.style.width = width + "px";
@@ -80,8 +80,8 @@
 
 (function() {
   var Scene, SceneA, SceneB, SceneInfo, cjs, sceneManager, setting,
-    __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    hasProp = {}.hasOwnProperty;
 
   if (this.exampleApp == null) {
     this.exampleApp = {};
@@ -93,8 +93,8 @@
 
   sceneManager = this.exampleApp.sceneManager;
 
-  Scene = (function(_super) {
-    __extends(Scene, _super);
+  Scene = (function(superClass) {
+    extend(Scene, superClass);
 
     function Scene(bgColor) {
       var shape;
@@ -113,8 +113,8 @@
 
   })(cjs.Container);
 
-  SceneA = (function(_super) {
-    __extends(SceneA, _super);
+  SceneA = (function(superClass) {
+    extend(SceneA, superClass);
 
     function SceneA() {
       var header, info, photoA, photoB, photoC;
@@ -164,8 +164,8 @@
 
   })(Scene);
 
-  SceneB = (function(_super) {
-    __extends(SceneB, _super);
+  SceneB = (function(superClass) {
+    extend(SceneB, superClass);
 
     function SceneB(contentId) {
       var content, header;
@@ -188,8 +188,8 @@
 
   })(Scene);
 
-  SceneInfo = (function(_super) {
-    __extends(SceneInfo, _super);
+  SceneInfo = (function(superClass) {
+    extend(SceneInfo, superClass);
 
     function SceneInfo() {
       var content;

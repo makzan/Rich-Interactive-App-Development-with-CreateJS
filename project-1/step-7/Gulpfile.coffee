@@ -6,10 +6,10 @@ order   = require 'gulp-order'
 gulp.task 'js', ->
   gulp.src [
     './app/scripts/setting.coffee'
-    './app/scripts/retinalize.coffee'
-    './app/scripts/scene-manager.coffee'
+    './app/scripts/retinalize.litcoffee'
+    './app/scripts/scene-manager.litcoffee'
     './app/scripts/scenes.coffee'
-    './app/scripts/app.coffee'
+    './app/scripts/app.litcoffee'
   ]
   .pipe coffee()
   .pipe concat 'app.js'
@@ -18,6 +18,7 @@ gulp.task 'js', ->
 
 gulp.task 'watch', ->
   gulp.watch './app/scripts/**/*.coffee', ['js']
+  gulp.watch './app/scripts/**/*.litcoffee', ['js']
 
 gulp.task 'default', ['js', 'watch']
 
